@@ -1,8 +1,9 @@
+import { Link } from 'react-router-dom';
 import Location from '../assets/icons/Location.png'
 import Money from '../assets/icons/money.png'
 const CategoryJob = ({ job }) => {
-    console.log(job);
-    const { logo, job_title, remote_or_onsite, location, salary, job_type, company_name } = job;
+    // console.log(job);
+    const { logo, id, job_title, remote_or_onsite, location, salary, job_type, company_name } = job;
     return (
         <div className="card card-compact shadow-sm border">
             <div className="mt-10 pl-5">
@@ -26,7 +27,7 @@ const CategoryJob = ({ job }) => {
                     </div>
                 </div>
                 <div className="card-actions text-xl">
-                    <button className="btn bg-[#7E90FE] text-white font-bold">View Details</button>
+                    <Link to={`/job/${id}`}><button className="btn bg-[#7E90FE] text-white font-bold">View Details</button></Link>
                 </div>
 
             </div>
