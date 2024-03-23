@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import Location from '../assets/icons/Location.png'
 import Money from '../assets/icons/money.png'
+import PropTypes from 'prop-types';
 const CategoryJob = ({ job }) => {
     // console.log(job);
     const { logo, id, job_title, remote_or_onsite, location, salary, job_type, company_name } = job;
@@ -29,10 +30,11 @@ const CategoryJob = ({ job }) => {
                 <div className="card-actions text-xl">
                     <Link to={`/job/${id}`}><button className="btn bg-[#7E90FE] text-white font-bold">View Details</button></Link>
                 </div>
-
             </div>
         </div>
     );
 };
-
+CategoryJob.propTypes = {
+    job: PropTypes.object.isRequired,
+}
 export default CategoryJob;

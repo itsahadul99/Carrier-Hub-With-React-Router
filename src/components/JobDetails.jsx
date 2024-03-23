@@ -6,12 +6,16 @@ import Location from '../assets/icons/location2.png';
 import Jobtitle from '../assets/icons/calendar.png';
 import bg1 from '../assets/images/bg1.png';
 import bg2 from '../assets/images/bg2.png';
+import { savedJobs } from "../utils";
 const JobDetails = () => {
     const jobs = useLoaderData();
     const { id } = useParams();
     const idInt = parseInt(id);
     const job = jobs.find(job => job.id === idInt);
-    console.log(job);
+    // console.log(job);
+    const handleAppliedJob = () => {
+        savedJobs(idInt)
+    }
     return (
         <div>
             <div className="font-bold flex flex-col justify-center items-center min-h-60 bg-[#f9f9ff] relative">
@@ -64,7 +68,7 @@ const JobDetails = () => {
                             </div>
                         </div>
                         <Link>
-                            <button className="btn mt-3 bg-[#7E90FE] text-white font-bold w-full">Apply Now</button>
+                            <button onClick={handleAppliedJob} className="btn mt-3 bg-[#7E90FE] text-white font-bold w-full">Apply Now</button>
                         </Link>
                     </div>
 

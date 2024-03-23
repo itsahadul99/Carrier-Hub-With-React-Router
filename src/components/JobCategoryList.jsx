@@ -7,7 +7,7 @@ const JobCategoryList = () => {
             .then(res => res.json())
             .then(data => setJobList(data))
     }, [])
-    console.log(joblist);
+    // console.log(joblist);
     return (
         <div className="max-w-6xl mx-auto">
             <h1 className="text-5xl font-bold text-center text-[#1A1919] mb-3">Job Category List</h1>
