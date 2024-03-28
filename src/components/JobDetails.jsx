@@ -7,6 +7,7 @@ import Jobtitle from '../assets/icons/calendar.png';
 import bg1 from '../assets/images/bg1.png';
 import bg2 from '../assets/images/bg2.png';
 import { savedJobs } from "../utils";
+import { Helmet } from "react-helmet-async";
 const JobDetails = () => {
     const jobs = useLoaderData();
     const { id } = useParams();
@@ -18,6 +19,9 @@ const JobDetails = () => {
     }
     return (
         <div>
+            <Helmet>
+                <title>Carrier Hub | Job Details</title>
+            </Helmet>
             <div className="font-bold flex flex-col justify-center items-center min-h-60 bg-[#f9f9ff] relative">
                 <div className="absolute bottom-0 left-0"> 
                     <img src={bg1} alt="" />

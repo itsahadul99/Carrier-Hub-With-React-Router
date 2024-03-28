@@ -4,6 +4,7 @@ import bg2 from '../assets/images/bg2.png';
 import { useLoaderData } from 'react-router-dom';
 import { getStoredJobs } from '../utils';
 import AppliedJobCard from './AppliedJobCard';
+import { Helmet } from 'react-helmet-async';
 const AppliedJob = () => {
     const jobs = useLoaderData();
     const [appliedJob, setAppliedJob] = useState([]);
@@ -33,6 +34,9 @@ const AppliedJob = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Carrier Hub | Applied Jobs</title>
+            </Helmet>
             <div className="font-bold flex flex-col justify-center items-center min-h-60 bg-[#f9f9ff] relative">
                 <div className="absolute bottom-0 left-0">
                     <img src={bg1} alt="" />
